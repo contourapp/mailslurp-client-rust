@@ -2,28 +2,25 @@
 
 All URIs are relative to *https://api.mailslurp.com*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**get_bounced_email**](BounceControllerApi#get_bounced_email) | **get** /bounce/emails/{id} | Get a bounced email.
-[**get_bounced_emails**](BounceControllerApi#get_bounced_emails) | **get** /bounce/emails | Get paginated list of bounced emails.
-[**get_bounced_recipient**](BounceControllerApi#get_bounced_recipient) | **get** /bounce/recipients/{id} | Get a bounced email.
-[**get_bounced_recipients**](BounceControllerApi#get_bounced_recipients) | **get** /bounce/recipients | Get paginated list of bounced recipients.
-
-
+| Method                                                                   | HTTP request                    | Description                               |
+| ------------------------------------------------------------------------ | ------------------------------- | ----------------------------------------- |
+| [**get_bounced_email**](BounceControllerApi#get_bounced_email)           | **get** /bounce/emails/{id}     | Get a bounced email.                      |
+| [**get_bounced_emails**](BounceControllerApi#get_bounced_emails)         | **get** /bounce/emails          | Get paginated list of bounced emails.     |
+| [**get_bounced_recipient**](BounceControllerApi#get_bounced_recipient)   | **get** /bounce/recipients/{id} | Get a bounced email.                      |
+| [**get_bounced_recipients**](BounceControllerApi#get_bounced_recipients) | **get** /bounce/recipients      | Get paginated list of bounced recipients. |
 
 ## get_bounced_email
 
 > crate::models::BouncedEmailDto get_bounced_email(id)
-Get a bounced email.
+> Get a bounced email.
 
 Bounced emails are email you have sent that were rejected by a recipient
 
 ### Parameters
 
-
-Name | Type | Description  | Required | Notes
-------------- | ------------- | ------------- | ------------- | -------------
-**id** | [**String**]() | ID of the bounced email to fetch | [required] |
+| Name   | Type           | Description                      | Required   | Notes |
+| ------ | -------------- | -------------------------------- | ---------- | ----- |
+| **id** | [**String**]() | ID of the bounced email to fetch | [required] |
 
 ### Return type
 
@@ -40,24 +37,22 @@ Name | Type | Description  | Required | Notes
 
 [[Back to top]](#) [[Back to API list]](../README#documentation-for-api-endpoints) [[Back to Model list]](../README#documentation-for-models) [[Back to README]](../README)
 
-
 ## get_bounced_emails
 
 > crate::models::PageBouncedEmail get_bounced_emails(before, page, since, size, sort)
-Get paginated list of bounced emails.
+> Get paginated list of bounced emails.
 
 Bounced emails are email you have sent that were rejected by a recipient
 
 ### Parameters
 
-
-Name | Type | Description  | Required | Notes
-------------- | ------------- | ------------- | ------------- | -------------
-**before** | Option<**String**> | Filter by created at before the given timestamp |  |
-**page** | Option<**i32**> | Optional page index  |  |[default to 0]
-**since** | Option<**String**> | Filter by created at after the given timestamp |  |
-**size** | Option<**i32**> | Optional page size  |  |[default to 20]
-**sort** | Option<**String**> | Optional createdAt sort direction ASC or DESC |  |[default to ASC]
+| Name       | Type               | Description                                     | Required | Notes            |
+| ---------- | ------------------ | ----------------------------------------------- | -------- | ---------------- |
+| **before** | Option<**String**> | Filter by created at before the given timestamp |          |
+| **page**   | Option<**i32**>    | Optional page index                             |          | [default to 0]   |
+| **since**  | Option<**String**> | Filter by created at after the given timestamp  |          |
+| **size**   | Option<**i32**>    | Optional page size                              |          | [default to 20]  |
+| **sort**   | Option<**String**> | Optional createdAt sort direction ASC or DESC   |          | [default to ASC] |
 
 ### Return type
 
@@ -74,20 +69,18 @@ Name | Type | Description  | Required | Notes
 
 [[Back to top]](#) [[Back to API list]](../README#documentation-for-api-endpoints) [[Back to Model list]](../README#documentation-for-models) [[Back to README]](../README)
 
-
 ## get_bounced_recipient
 
 > crate::models::BouncedRecipientDto get_bounced_recipient(id)
-Get a bounced email.
+> Get a bounced email.
 
 Bounced emails are email you have sent that were rejected by a recipient
 
 ### Parameters
 
-
-Name | Type | Description  | Required | Notes
-------------- | ------------- | ------------- | ------------- | -------------
-**id** | [**String**]() | ID of the bounced recipient | [required] |
+| Name   | Type           | Description                 | Required   | Notes |
+| ------ | -------------- | --------------------------- | ---------- | ----- |
+| **id** | [**String**]() | ID of the bounced recipient | [required] |
 
 ### Return type
 
@@ -104,24 +97,22 @@ Name | Type | Description  | Required | Notes
 
 [[Back to top]](#) [[Back to API list]](../README#documentation-for-api-endpoints) [[Back to Model list]](../README#documentation-for-models) [[Back to README]](../README)
 
-
 ## get_bounced_recipients
 
 > crate::models::PageBouncedRecipients get_bounced_recipients(before, page, since, size, sort)
-Get paginated list of bounced recipients.
+> Get paginated list of bounced recipients.
 
 Bounced recipients are email addresses that you have sent emails to that did not accept the sent email. Once a recipient is bounced you cannot send emails to that address.
 
 ### Parameters
 
-
-Name | Type | Description  | Required | Notes
-------------- | ------------- | ------------- | ------------- | -------------
-**before** | Option<**String**> | Filter by created at before the given timestamp |  |
-**page** | Option<**i32**> | Optional page index  |  |[default to 0]
-**since** | Option<**String**> | Filter by created at after the given timestamp |  |
-**size** | Option<**i32**> | Optional page size  |  |[default to 20]
-**sort** | Option<**String**> | Optional createdAt sort direction ASC or DESC |  |[default to ASC]
+| Name       | Type               | Description                                     | Required | Notes            |
+| ---------- | ------------------ | ----------------------------------------------- | -------- | ---------------- |
+| **before** | Option<**String**> | Filter by created at before the given timestamp |          |
+| **page**   | Option<**i32**>    | Optional page index                             |          | [default to 0]   |
+| **since**  | Option<**String**> | Filter by created at after the given timestamp  |          |
+| **size**   | Option<**i32**>    | Optional page size                              |          | [default to 20]  |
+| **sort**   | Option<**String**> | Optional createdAt sort direction ASC or DESC   |          | [default to ASC] |
 
 ### Return type
 
@@ -137,4 +128,3 @@ Name | Type | Description  | Required | Notes
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README#documentation-for-api-endpoints) [[Back to Model list]](../README#documentation-for-models) [[Back to README]](../README)
-

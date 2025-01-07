@@ -2,28 +2,25 @@
 
 All URIs are relative to *https://api.mailslurp.com*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**create_contact**](ContactControllerApi#create_contact) | **post** /contacts | Create a contact
-[**delete_contact**](ContactControllerApi#delete_contact) | **delete** /contacts/{contactId} | Delete contact
-[**get_all_contacts**](ContactControllerApi#get_all_contacts) | **get** /contacts/paginated | Get all contacts
-[**get_contact**](ContactControllerApi#get_contact) | **get** /contacts/{contactId} | Get contact
-[**get_contact_v_card**](ContactControllerApi#get_contact_v_card) | **get** /contacts/{contactId}/download | Get contact vCard vcf file
-[**get_contacts**](ContactControllerApi#get_contacts) | **get** /contacts | Get all contacts
-
-
+| Method                                                            | HTTP request                           | Description                |
+| ----------------------------------------------------------------- | -------------------------------------- | -------------------------- |
+| [**create_contact**](ContactControllerApi#create_contact)         | **post** /contacts                     | Create a contact           |
+| [**delete_contact**](ContactControllerApi#delete_contact)         | **delete** /contacts/{contactId}       | Delete contact             |
+| [**get_all_contacts**](ContactControllerApi#get_all_contacts)     | **get** /contacts/paginated            | Get all contacts           |
+| [**get_contact**](ContactControllerApi#get_contact)               | **get** /contacts/{contactId}          | Get contact                |
+| [**get_contact_v_card**](ContactControllerApi#get_contact_v_card) | **get** /contacts/{contactId}/download | Get contact vCard vcf file |
+| [**get_contacts**](ContactControllerApi#get_contacts)             | **get** /contacts                      | Get all contacts           |
 
 ## create_contact
 
 > crate::models::ContactDto create_contact(create_contact_options)
-Create a contact
+> Create a contact
 
 ### Parameters
 
-
-Name | Type | Description  | Required | Notes
-------------- | ------------- | ------------- | ------------- | -------------
-**create_contact_options** | [**CreateContactOptions**](CreateContactOptions) | createContactOptions | [required] |
+| Name                       | Type                                             | Description          | Required   | Notes |
+| -------------------------- | ------------------------------------------------ | -------------------- | ---------- | ----- |
+| **create_contact_options** | [**CreateContactOptions**](CreateContactOptions) | createContactOptions | [required] |
 
 ### Return type
 
@@ -40,22 +37,20 @@ Name | Type | Description  | Required | Notes
 
 [[Back to top]](#) [[Back to API list]](../README#documentation-for-api-endpoints) [[Back to Model list]](../README#documentation-for-models) [[Back to README]](../README)
 
-
 ## delete_contact
 
 > delete_contact(contact_id)
-Delete contact
+> Delete contact
 
 ### Parameters
 
-
-Name | Type | Description  | Required | Notes
-------------- | ------------- | ------------- | ------------- | -------------
-**contact_id** | [**String**]() | contactId | [required] |
+| Name           | Type           | Description | Required   | Notes |
+| -------------- | -------------- | ----------- | ---------- | ----- |
+| **contact_id** | [**String**]() | contactId   | [required] |
 
 ### Return type
 
- (empty response body)
+(empty response body)
 
 ### Authorization
 
@@ -68,22 +63,20 @@ Name | Type | Description  | Required | Notes
 
 [[Back to top]](#) [[Back to API list]](../README#documentation-for-api-endpoints) [[Back to Model list]](../README#documentation-for-models) [[Back to README]](../README)
 
-
 ## get_all_contacts
 
 > crate::models::PageContactProjection get_all_contacts(before, page, since, size, sort)
-Get all contacts
+> Get all contacts
 
 ### Parameters
 
-
-Name | Type | Description  | Required | Notes
-------------- | ------------- | ------------- | ------------- | -------------
-**before** | Option<**String**> | Filter by created at before the given timestamp |  |
-**page** | Option<**i32**> | Optional page index in list pagination |  |[default to 0]
-**since** | Option<**String**> | Filter by created at after the given timestamp |  |
-**size** | Option<**i32**> | Optional page size in list pagination |  |[default to 20]
-**sort** | Option<**String**> | Optional createdAt sort direction ASC or DESC |  |[default to ASC]
+| Name       | Type               | Description                                     | Required | Notes            |
+| ---------- | ------------------ | ----------------------------------------------- | -------- | ---------------- |
+| **before** | Option<**String**> | Filter by created at before the given timestamp |          |
+| **page**   | Option<**i32**>    | Optional page index in list pagination          |          | [default to 0]   |
+| **since**  | Option<**String**> | Filter by created at after the given timestamp  |          |
+| **size**   | Option<**i32**>    | Optional page size in list pagination           |          | [default to 20]  |
+| **sort**   | Option<**String**> | Optional createdAt sort direction ASC or DESC   |          | [default to ASC] |
 
 ### Return type
 
@@ -100,18 +93,16 @@ Name | Type | Description  | Required | Notes
 
 [[Back to top]](#) [[Back to API list]](../README#documentation-for-api-endpoints) [[Back to Model list]](../README#documentation-for-models) [[Back to README]](../README)
 
-
 ## get_contact
 
 > crate::models::ContactDto get_contact(contact_id)
-Get contact
+> Get contact
 
 ### Parameters
 
-
-Name | Type | Description  | Required | Notes
-------------- | ------------- | ------------- | ------------- | -------------
-**contact_id** | [**String**]() | contactId | [required] |
+| Name           | Type           | Description | Required   | Notes |
+| -------------- | -------------- | ----------- | ---------- | ----- |
+| **contact_id** | [**String**]() | contactId   | [required] |
 
 ### Return type
 
@@ -128,18 +119,16 @@ Name | Type | Description  | Required | Notes
 
 [[Back to top]](#) [[Back to API list]](../README#documentation-for-api-endpoints) [[Back to Model list]](../README#documentation-for-models) [[Back to README]](../README)
 
-
 ## get_contact_v_card
 
 > String get_contact_v_card(contact_id)
-Get contact vCard vcf file
+> Get contact vCard vcf file
 
 ### Parameters
 
-
-Name | Type | Description  | Required | Notes
-------------- | ------------- | ------------- | ------------- | -------------
-**contact_id** | [**String**]() | contactId | [required] |
+| Name           | Type           | Description | Required   | Notes |
+| -------------- | -------------- | ----------- | ---------- | ----- |
+| **contact_id** | [**String**]() | contactId   | [required] |
 
 ### Return type
 
@@ -156,11 +145,10 @@ Name | Type | Description  | Required | Notes
 
 [[Back to top]](#) [[Back to API list]](../README#documentation-for-api-endpoints) [[Back to Model list]](../README#documentation-for-models) [[Back to README]](../README)
 
-
 ## get_contacts
 
 > Vec<crate::models::ContactProjection> get_contacts()
-Get all contacts
+> Get all contacts
 
 ### Parameters
 
@@ -180,4 +168,3 @@ This endpoint does not need any parameter.
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README#documentation-for-api-endpoints) [[Back to Model list]](../README#documentation-for-models) [[Back to README]](../README)
-

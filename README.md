@@ -1,7 +1,9 @@
 # Rust Email Library for MailSlurp
+
 MailSlurp is an API for sending and receiving emails from dynamically allocated email addresses. It's designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.
 
 ## Resources
+
 - [Homepage](https://www.mailslurp.com)
 - Get an [API KEY](https://app.mailslurp.com/sign-up/)
 - [Documentation](https://www.mailslurp.com/docs/rust/docs/)
@@ -11,6 +13,7 @@ MailSlurp is an API for sending and receiving emails from dynamically allocated 
 - [Code Examples](https://github.com/mailslurp/examples)
 
 ## Install
+
 Use cargo to add the MailSlurp crate to your project:
 
 ```bash
@@ -27,6 +30,7 @@ mailslurp = "x.x.x"
 Then run `cargo fetch`.
 
 ### Other dependencies
+
 The MailSlurp library uses the `reqwest` HTTP client and async functions. Add `tokio` and `reqwest` to your Cargo file:
 
 ```toml
@@ -36,14 +40,17 @@ reqwest = { version = "0.11", features = ["json", "multipart"] }
 ```
 
 ## Configure
+
 The MailSlurp SDK lets you create real email accounts for testing and development.
 
 ### Set API Key
+
 MailSlurp is free to use but you must have an API Key. [Create an account](https://app.mailslurp.com/sign-up/) to obtain one:
 
 ![api key](https://www.mailslurp.com/assets/guides/find-api-key.png)
 
 ### Import and configure
+
 MailSlurp is under the `mailslurp` namespace with `apis` and `models` modules. Controllers are provided that mimic the endpoints of the [REST API](https://api.mailslurp.com/swagger-ui.html).
 
 ```rust
@@ -60,7 +67,7 @@ fn main() {
 
     // read mailslurp api key from environment variable or a string
     let api_key: String = env::var("MAILSLURP_API_KEY")?;
-    
+
     // configure mailslurp with base path, api key, and reqwest client
     let configuration = configuration::Configuration {
         // required fields
@@ -80,6 +87,7 @@ fn main() {
 ```
 
 ## Calling controllers
+
 The MailSlurp SDK is generated from the REST API and some methods take many optional parameters. Fill them with None or implement a Default trait if you require.
 
 ```rust
@@ -104,9 +112,11 @@ fn use_controllers() {
 ```
 
 ## Common usage
+
 Here are some examples for how to send and receive emails and attachments in Rust using MailSlurp.
 
 ### Create email accounts
+
 MailSlurp inboxes have an email address and ID. Use the ID for further operations against the inbox.
 
 ```rust
@@ -129,6 +139,7 @@ fn create_inbox() {
 ```
 
 ### Send emails
+
 You can send HTML emails in MailSlurp:
 
 ```rust
@@ -160,6 +171,7 @@ fn send_email() {
 To send attachments first upload each attachment with the attachment controller and save the returned IDs to a variable. Then pass those IDs to the send method as the `attachments` property.
 
 ### Receive email
+
 You can receive emails right in code and tests using the wait controller.
 
 ```rust
@@ -175,6 +187,7 @@ fn receive_email() {
 ```
 
 ## Testing async
+
 MailSlurp methods are async. Use tokio-test or another implementation to test with async functions.
 
 ```rust
@@ -191,4 +204,5 @@ async fn my_test() -> color_eyre::Result<()> {
 See [Rust examples](https://www.mailslurp.com/tags/rust) page for more help.
 
 ## More information
+
 See the official [Rust homepage](https://www.mailslurp.com/docs/rust/) or the [getting started guide](https://www.mailslurp.com/guides/getting-started/) for more information.
